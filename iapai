@@ -1,0 +1,87 @@
+<html>
+<head>
+<script>
+
+// Registration validation
+function reg() {
+    var uname = document.getElementById("uname").value;
+    var upwd = document.getElementById("upwd").value;
+
+    if (uname == "" || upwd.length < 6) {
+        alert("Invalid registration");
+        return false;
+    }
+    return true;
+}
+
+// Login validation
+function login() {
+    var uname = document.getElementById("uname").value;
+    var upwd = document.getElementById("upwd").value;
+
+    if (uname == "" || upwd == "") {
+        alert("Invalid login");
+        return false;
+    }
+    return true;
+}
+
+// Profile validation
+function profile() {
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+
+    if (email == "" || phone.length != 10) {
+        alert("Invalid profile");
+        return false;
+    }
+    return true;
+}
+
+// Payment validation
+function pay() {
+    var card = document.getElementById("card").value;
+    var cvv = document.getElementById("cvv").value;
+
+    if (card.length != 16 || cvv.length != 3) {
+        alert("Invalid card");
+        return false;
+    }
+    return true;
+}
+
+</script>
+</head>
+
+<body>
+
+<h3>Registration</h3>
+<form onsubmit="return reg()">
+    Name: <input id="uname"><br>
+    Password: <input type="password" id="upwd"><br>
+    <input type="submit">
+</form>
+
+<h3>Login</h3>
+<form onsubmit="return login()">
+    User: <input id="uname"><br>
+    Password: <input type="password" id="upwd"><br>
+    <input type="submit">
+</form>
+
+<h3>User Profile</h3>
+<form onsubmit="return profile()">
+    Email: <input id="email"><br>
+    Phone: <input id="phone"><br>
+    <input type="submit">
+</form>
+
+<h3>Payment</h3>
+<form onsubmit="return pay()">
+    Card No: <input id="card"><br>
+    CVV: <input id="cvv"><br>
+    <input type="submit">
+</form>
+
+</body>
+</html>
